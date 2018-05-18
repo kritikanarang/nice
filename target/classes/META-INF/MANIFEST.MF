@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: NICE
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: knarang2
+Implementation-Vendor-Id: nice
+Build-Jdk: 1.8.0_131
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/nice
+Created-By: Maven Integration for Eclipse
+
