@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,7 +17,7 @@ import com.nice.security.config.CustomUserDetails;
 import com.nice.service.processor.UserService;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages= {"com.nice.controllers.impl","com.nice.controllers", "com.nice.configuration", "com.nice.service.processor", "com.nice.service.processor.impl","com.nice.data.configuration","com.nice.helper", "com.nice.helper.generic", "com.nice.api.elements", "com.nice.api.tests", "com.nice.security.config"}, exclude={MongoAutoConfiguration.class})
 public class App {
 	
 	@Autowired
