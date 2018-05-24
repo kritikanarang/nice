@@ -15,8 +15,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.nice.api.elements.JacksonUtils;
 import com.nice.api.elements.SchemaGenerator;
-//import com.nice.helper.generic.ProductHelper;
-//import com.nice.helper.generic.SpecificationHelper;
 import com.nice.helper.generic.TutorHelper;
 
 @Configuration
