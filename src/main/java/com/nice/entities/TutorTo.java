@@ -20,6 +20,11 @@ public class TutorTo implements MongoEntity {
 	public TutorTo() {
 		super();
 	}
+	
+	public TutorTo(String tutorId) {
+		super();
+		this.tutorId = tutorId;
+	}
 
 	public TutorTo(String tutorId, String tutorName, String subject, String location, String tutorImg) {
 		super();

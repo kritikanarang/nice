@@ -32,7 +32,7 @@ public class TutorHelper extends ResourceHelper<Tutor, HttpServletRequest, Strin
 		_options.getLinks().add(addCollectionOptionsLink(request.getRequestURL().toString(), RequestMethod.GET.name(), TUTOR_RESOURCE_GET_TITLE, StringConstants.GET_REL, Tutor.class));
 		_options.getLinks().add(addCollectionOptionsLink(request.getRequestURL().toString(), RequestMethod.POST.name(), TUTOR_RESOURCE_POST_TITLE, StringConstants.POST_REL, Tutor.class));
 		optionsResponseEntity.setOptions(_options);
-		//optionsResponseEntity.add(linkTo(methodOn(TutorController.class).optionsOnTutors(request, null)).withSelfRel().expand());
+		optionsResponseEntity.add(linkTo(methodOn(TutorController.class).optionsOnTutors(request, null)).withSelfRel().expand());
 		return optionsResponseEntity;
 	}
 
@@ -46,7 +46,7 @@ public class TutorHelper extends ResourceHelper<Tutor, HttpServletRequest, Strin
 		_options.getLinks().add(addCollectionOptionsLink(request.getRequestURL().toString(), RequestMethod.GET.name(), TUTOR_RESOURCE_GET_ID_TITLE, StringConstants.GET_ID_REL, Tutor.class));
 		_options.getLinks().add(addCollectionOptionsLink(request.getRequestURL().toString(), RequestMethod.DELETE.name(), TUTOR_RESOURCE_DELETE_TITLE, StringConstants.DELETE_REL, Tutor.class));
 		optionsResponseEntity.setOptions(_options);
-		//optionsResponseEntity.add(linkTo(methodOn(TutorController.class).optionsOnTutorsId(id, request, null)).withSelfRel().expand(id, request, modelClass));
+		optionsResponseEntity.add(linkTo(methodOn(TutorController.class).optionsOnTutorsId(id, request, null)).withSelfRel().expand(id, request, modelClass));
 		return optionsResponseEntity;
 	}
 

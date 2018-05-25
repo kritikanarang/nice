@@ -26,8 +26,8 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 			Page<TutorTo> tutorToList = tutorRepoObj.findAll(PageRequest.of(page, size));
 			return fetchTutorList(tutorObj, tutorToList);
 		}else {
-			List<TutorTo> productToList = tutorRepoObj.findAll();
-			return fetchTutorList(tutorObj, productToList);
+			List<TutorTo> tutorToList = tutorRepoObj.findAll();
+			return fetchTutorList(tutorObj, tutorToList);
 		}
 	}
 	
@@ -41,9 +41,14 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 	}
 
 	@Override
-	public Model getResponseById(Tutor model) {
-		// TODO Auto-generated method stub
-		return null;
+	public Model getResponseById(Tutor tutorObj) {
+		TutorTo tutorTo = tutorRepoObj.findUnique(tutorObj.getTutorId());
+		tutorObj.setTutorId(tutorTo.getTutorId());
+		tutorObj.setTutorName(tutorTo.getTutorName());
+		tutorObj.setSubject(tutorTo.getSubject());
+		tutorObj.setLocation(tutorTo.getLocation());
+		tutorObj.setLocation(tutorTo.getTutorImg());
+		return tutorObj;
 	}
 
 	@Override
@@ -54,8 +59,9 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 	}
 
 	@Override
-	public void processDelete(Tutor model) {
-		// TODO Auto-generated method stub
+	public void processDelete(Tutor tutorObj) {
+		TutorTo tutorTo = new TutorTo(tutorObj.getTutorId());
+		tutorRepoObj.delete(tutorTo);
 		
 	}
 
