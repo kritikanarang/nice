@@ -34,7 +34,7 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 	private List<Tutor> fetchTutorList(Tutor tutorObj, Iterable<TutorTo> tutorToList){
 		List<Tutor> tutorList = new ArrayList<Tutor>();
 		for(TutorTo tutorTo : tutorToList) {
-			tutorObj = new Tutor(tutorTo.getTutorId(), tutorTo.getTutorName(), tutorTo.getLocation(), tutorTo.getSubject(), tutorTo.getTutorImg());
+			tutorObj = new Tutor(tutorTo.getTutorId(), tutorTo.getTutorName(), tutorTo.getLocation(), tutorTo.getSubject(), tutorTo.getTutorImg(), tutorTo.getAge(), tutorTo.getSex(), tutorTo.getQualifaction(), tutorTo.getExperience(), tutorTo.getClasses());
 			tutorList.add(tutorObj);
 		}
 		return tutorList;
@@ -53,7 +53,7 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 
 	@Override
 	public void postRequest(Tutor tutorObj) {
-		TutorTo tutorTo = new TutorTo(tutorObj.getTutorId(), tutorObj.getTutorName(), tutorObj.getLocation(), tutorObj.getSubject(), tutorObj.getTutorImg());
+		TutorTo tutorTo = new TutorTo(tutorObj.getTutorId(), tutorObj.getTutorName(), tutorObj.getLocation(), tutorObj.getSubject(), tutorObj.getTutorImg(), tutorObj.getAge(), tutorObj.getSex(), tutorObj.getQualifaction(), tutorObj.getExperience(), tutorObj.getClasses());
 		tutorRepoObj.save(tutorTo);
 		
 	}

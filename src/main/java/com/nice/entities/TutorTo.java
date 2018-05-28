@@ -16,6 +16,11 @@ public class TutorTo implements MongoEntity {
 	private String subject;
 	private String location;
 	private String tutorImg;
+	private String age;
+	private String sex;
+	private String qualifaction;
+	private String experience;
+	private String classes;
 	
 	public TutorTo() {
 		super();
@@ -26,13 +31,19 @@ public class TutorTo implements MongoEntity {
 		this.tutorId = tutorId;
 	}
 
-	public TutorTo(String tutorId, String tutorName, String subject, String location, String tutorImg) {
+	public TutorTo(String tutorId, String tutorName, String subject, String location, String tutorImg, String age,
+			String sex, String qualifaction, String experience, String classes) {
 		super();
 		this.tutorId = tutorId;
 		this.tutorName = tutorName;
 		this.subject = subject;
 		this.location = location;
 		this.tutorImg = tutorImg;
+		this.age = age;
+		this.sex = sex;
+		this.qualifaction = qualifaction;
+		this.experience = experience;
+		this.classes = classes;
 	}
 
 	public String getTutorId() {
@@ -73,6 +84,46 @@ public class TutorTo implements MongoEntity {
 
 	public void setTutorImg(String tutorImg) {
 		this.tutorImg = tutorImg;
+	}
+
+	public String getAge() {
+		return age;
+	}
+
+	public void setAge(String age) {
+		this.age = age;
+	}
+
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getQualifaction() {
+		return qualifaction;
+	}
+
+	public void setQualifaction(String qualifaction) {
+		this.qualifaction = qualifaction;
+	}
+
+	public String getExperience() {
+		return experience;
+	}
+
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	public String getClasses() {
+		return classes;
+	}
+
+	public void setClasses(String classes) {
+		this.classes = classes;
 	}
 	
 }
