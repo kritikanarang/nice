@@ -6,9 +6,12 @@ import org.springframework.hateoas.ResourceSupport;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.nice.api.annotations.SummaryProperty;
 import com.nice.model.Model;
 
+@JsonInclude(Include.NON_NULL)
 public class Tutor extends ResourceSupport implements Serializable, Model, Validator {
 
 	private static final long serialVersionUID = 1L;
@@ -23,15 +26,15 @@ public class Tutor extends ResourceSupport implements Serializable, Model, Valid
 	private String location;
 	@SummaryProperty
 	private String tutorImg;
-	@SummaryProperty
+	
 	private String age;
-	@SummaryProperty
+
 	private String sex;
-	@SummaryProperty
-	private String qualifaction;
-	@SummaryProperty
+
+	private String qualification;
+	
 	private String experience;
-	@SummaryProperty
+	
 	private String classes;
 	
 	public Tutor() {
@@ -39,7 +42,7 @@ public class Tutor extends ResourceSupport implements Serializable, Model, Valid
 	}
 	
 	public Tutor(String tutorId, String tutorName, String subject, String location, String tutorImg, String age,
-			String sex, String qualifaction, String experience, String classes) {
+			String sex, String qualification, String experience, String classes) {
 		super();
 		this.tutorId = tutorId;
 		this.tutorName = tutorName;
@@ -48,7 +51,7 @@ public class Tutor extends ResourceSupport implements Serializable, Model, Valid
 		this.tutorImg = tutorImg;
 		this.age = age;
 		this.sex = sex;
-		this.qualifaction = qualifaction;
+		this.qualification = qualification;
 		this.experience = experience;
 		this.classes = classes;
 	}
@@ -109,12 +112,12 @@ public class Tutor extends ResourceSupport implements Serializable, Model, Valid
 		this.sex = sex;
 	}
 
-	public String getQualifaction() {
-		return qualifaction;
+	public String getQualification() {
+		return qualification;
 	}
 
-	public void setQualifaction(String qualifaction) {
-		this.qualifaction = qualifaction;
+	public void setQualification(String qualification) {
+		this.qualification = qualification;
 	}
 
 	public String getExperience() {
@@ -135,7 +138,7 @@ public class Tutor extends ResourceSupport implements Serializable, Model, Valid
 
 	@Override
 	public String generateIdFromModel() {
-		return null;
+		return this.tutorId;
 	}
 
 	@Override
