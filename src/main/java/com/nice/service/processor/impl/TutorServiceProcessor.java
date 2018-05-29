@@ -47,13 +47,19 @@ public class TutorServiceProcessor implements ServiceProcessor<Tutor>{
 		tutorObj.setTutorName(tutorTo.getTutorName());
 		tutorObj.setSubject(tutorTo.getSubject());
 		tutorObj.setLocation(tutorTo.getLocation());
-		tutorObj.setLocation(tutorTo.getTutorImg());
+		tutorObj.setTutorImg(tutorTo.getTutorImg());
+		tutorObj.setTutorName(tutorTo.getTutorName());
+		tutorObj.setExperience(tutorTo.getExperience());
+		tutorObj.setClasses(tutorTo.getClasses());
+		tutorObj.setQualification(tutorTo.getQualifaction());
+		tutorObj.setSex(tutorTo.getSex());
+		tutorObj.setAge(tutorTo.getAge());
 		return tutorObj;
 	}
 
 	@Override
 	public void postRequest(Tutor tutorObj) {
-		TutorTo tutorTo = new TutorTo(tutorObj.getTutorId(), tutorObj.getTutorName(), tutorObj.getLocation(), tutorObj.getSubject(), tutorObj.getTutorImg(), tutorObj.getAge(), tutorObj.getSex(), tutorObj.getQualifaction(), tutorObj.getExperience(), tutorObj.getClasses());
+		TutorTo tutorTo = new TutorTo(tutorObj.getTutorId(), tutorObj.getTutorName(), tutorObj.getLocation(), tutorObj.getSubject(), tutorObj.getTutorImg(), tutorObj.getAge(), tutorObj.getSex(), tutorObj.getQualification(), tutorObj.getExperience(), tutorObj.getClasses());
 		tutorRepoObj.save(tutorTo);
 		
 	}
